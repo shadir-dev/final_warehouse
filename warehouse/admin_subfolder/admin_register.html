@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register Admin - Smart Warehouse</title>
+  <style>
+    body {
+      background: #f4f7f9;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #444;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+    .password-toggle {
+      position: relative;
+    }
+    .password-toggle i {
+      position: absolute;
+      top: 40%;
+      right: 10px;
+      cursor: pointer;
+      color: #555;
+    }
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 10px;
+      background-color: #005eff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0041cc;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .footer a {
+      color: #005eff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Create Admin Account</h2>
+  <form action="admin_registration.php" method="POST">
+    <label>Full Name</label>
+    <input type="text" name="full_name" required>
+
+    <label>Username</label>
+    <input type="text" name="username" required>
+
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Password</label>
+    <div class="password-toggle">
+      <input type="password" name="password" id="password" required>
+      <i onclick="togglePassword('password')" id="eye1">👁️</i>
+    </div>
+
+    <label>Confirm Password</label>
+    <div class="password-toggle">
+      <input type="password" name="confirm_password" id="confirm_password" required>
+      <i onclick="togglePassword('confirm_password')" id="eye2">👁️</i>
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <div class="footer">
+    Already registered? <a href="admin_login.html">Login here</a>
+  </div>
+</div>
+
+<script>
+function togglePassword(id) {
+  const input = document.getElementById(id);
+  input.type = input.type === 'password' ? 'text' : 'password';
+}
+</script>
+
+</body>
+</html>

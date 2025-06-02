@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login</title>
+  <style>
+    body {
+      background: #f4f7fa;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .input-group {
+      margin: 15px 0;
+      position: relative;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 10px 3px 10px 3px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+    .input-group .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #00529B;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #003f7f;
+    }
+    .footer {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Welcome</h2>
+    <form action="admin_login.php" method="POST">
+      <div class="input-group">
+        <input type="text" name="username" placeholder="Enter username" required />
+      </div>
+      <div class="input-group">
+        <input type="password" name="password" id="password" placeholder="Enter password" required />
+        <span class="toggle-password" onclick="togglePassword()">👁️</span>
+        <div class="input-group">
+          <input type="password" name="secret_key" placeholder="Enter secret key" required />
+        </div>
+      </div>
+      <button type="submit">Login</button>
+      dont have an account? <a href="admin_register.html">register here</a>
+    </form>
+    <div class="footer">Admin Panel • Warehouse DB</div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passInput = document.getElementById('password');
+      if (passInput.type === "password") {
+        passInput.type = "text";
+      } else {
+        passInput.type = "password";
+      }
+    }
+  </script>
+
+</body>
+</html>

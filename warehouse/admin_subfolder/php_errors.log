@@ -1,0 +1,7 @@
+[01-Jun-2025 15:34:22 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'your_username'@'localhost' (using password: YES) in C:\xampp\htdocs\warehouse\admin_subfolder\admin.fetch_stock.php on line 38
+[01-Jun-2025 15:34:22 Europe/Berlin] Database connection failed: Access denied for user 'your_username'@'localhost' (using password: YES)
+[01-Jun-2025 15:34:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli object is already closed in C:\xampp\htdocs\warehouse\admin_subfolder\admin.fetch_stock.php:100
+Stack trace:
+#0 C:\xampp\htdocs\warehouse\admin_subfolder\admin.fetch_stock.php(100): mysqli->close()
+#1 {main}
+  thrown in C:\xampp\htdocs\warehouse\admin_subfolder\admin.fetch_stock.php on line 100
